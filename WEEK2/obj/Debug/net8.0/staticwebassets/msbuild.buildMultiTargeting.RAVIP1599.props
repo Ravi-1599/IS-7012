@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\RAVIP1599.props" />
+</Project>
