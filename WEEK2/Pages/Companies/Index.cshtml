@@ -1,0 +1,102 @@
+﻿@page
+@model RAVIP1599.Pages.Companies.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Company[0].name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Company[0].position)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Company[0].minimumSalary)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Company[0].maximumSalary)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Company[0].startDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Company[0].location)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Company[0].noOfEmployees)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Company[0].revenue)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Company[0].ISIN)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Company[0].website)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Company[0].keyPeople)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Company[0].Industry)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Company) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.position)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.minimumSalary)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.maximumSalary)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.startDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.location)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.noOfEmployees)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.revenue)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ISIN)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.website)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.keyPeople)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Industry.Name)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.ID">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
